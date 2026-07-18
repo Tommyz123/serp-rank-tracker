@@ -3,6 +3,7 @@
 A real Google rank tracker that **records failures instead of inventing rankings**.
 
 Live demo: https://tommyz123.github.io/serp-rank-tracker/ *(static dashboard built from collected data)*
+Case study: [CASE_STUDY.md](CASE_STUDY.md) — the design decisions and what they mean for a client
 
 ## Why another rank tracker
 
