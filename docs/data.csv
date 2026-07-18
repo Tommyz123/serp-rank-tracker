@@ -1,0 +1,129 @@
+timestamp_utc,keyword,domain,position,status,data_layer,matched_url,fetch_attempts
+2026-07-04T15:53:29Z,emergency plumber denver,blueskyplumbing.com,1,ok,seeded,,1
+2026-07-05T15:53:29Z,emergency plumber denver,blueskyplumbing.com,1,ok,seeded,,1
+2026-07-06T15:53:29Z,emergency plumber denver,blueskyplumbing.com,1,ok,seeded,,1
+2026-07-07T15:53:29Z,emergency plumber denver,blueskyplumbing.com,1,ok,seeded,,1
+2026-07-08T15:53:29Z,emergency plumber denver,blueskyplumbing.com,2,ok,seeded,,1
+2026-07-09T15:53:29Z,emergency plumber denver,blueskyplumbing.com,1,ok,seeded,,1
+2026-07-10T15:53:29Z,emergency plumber denver,blueskyplumbing.com,1,ok,seeded,,1
+2026-07-11T15:53:29Z,emergency plumber denver,blueskyplumbing.com,1,ok,seeded,,1
+2026-07-12T15:53:29Z,emergency plumber denver,blueskyplumbing.com,1,ok,seeded,,1
+2026-07-13T15:53:29Z,emergency plumber denver,blueskyplumbing.com,,failed,seeded,,3
+2026-07-14T15:53:29Z,emergency plumber denver,blueskyplumbing.com,2,ok,seeded,,1
+2026-07-15T15:53:29Z,emergency plumber denver,blueskyplumbing.com,2,ok,seeded,,2
+2026-07-16T15:53:29Z,emergency plumber denver,blueskyplumbing.com,2,ok,seeded,,1
+2026-07-17T15:53:29Z,emergency plumber denver,blueskyplumbing.com,3,ok,seeded,,1
+2026-07-18T15:53:29Z,emergency plumber denver,blueskyplumbing.com,3,ok,live,https://www.blueskyplumbing.com/plumbing/emergency-plumbing-repair/,1
+2026-07-18T15:57:53Z,emergency plumber denver,blueskyplumbing.com,3,ok,live,https://www.blueskyplumbing.com/plumbing/emergency-plumbing-repair/,1
+2026-07-04T15:53:29Z,emergency plumber denver,rotorooter.com,5,ok,seeded,,1
+2026-07-05T15:53:29Z,emergency plumber denver,rotorooter.com,4,ok,seeded,,1
+2026-07-06T15:53:29Z,emergency plumber denver,rotorooter.com,4,ok,seeded,,1
+2026-07-07T15:53:29Z,emergency plumber denver,rotorooter.com,3,ok,seeded,,1
+2026-07-08T15:53:29Z,emergency plumber denver,rotorooter.com,2,ok,seeded,,1
+2026-07-09T15:53:29Z,emergency plumber denver,rotorooter.com,1,ok,seeded,,1
+2026-07-10T15:53:29Z,emergency plumber denver,rotorooter.com,1,ok,seeded,,1
+2026-07-11T15:53:29Z,emergency plumber denver,rotorooter.com,2,ok,seeded,,1
+2026-07-12T15:53:29Z,emergency plumber denver,rotorooter.com,3,ok,seeded,,1
+2026-07-13T15:53:29Z,emergency plumber denver,rotorooter.com,,failed,seeded,,3
+2026-07-14T15:53:29Z,emergency plumber denver,rotorooter.com,1,ok,seeded,,1
+2026-07-15T15:53:29Z,emergency plumber denver,rotorooter.com,1,ok,seeded,,2
+2026-07-16T15:53:29Z,emergency plumber denver,rotorooter.com,1,ok,seeded,,1
+2026-07-17T15:53:29Z,emergency plumber denver,rotorooter.com,2,ok,seeded,,1
+2026-07-18T15:53:29Z,emergency plumber denver,rotorooter.com,2,ok,live,https://www.rotorooter.com/denver/,1
+2026-07-18T15:57:53Z,emergency plumber denver,rotorooter.com,2,ok,live,https://www.rotorooter.com/denver/,1
+2026-07-04T15:53:29Z,family dentist austin,austinfamilydds.com,1,ok,seeded,,1
+2026-07-05T15:53:29Z,family dentist austin,austinfamilydds.com,1,ok,seeded,,1
+2026-07-06T15:53:29Z,family dentist austin,austinfamilydds.com,1,ok,seeded,,1
+2026-07-07T15:53:29Z,family dentist austin,austinfamilydds.com,1,ok,seeded,,1
+2026-07-08T15:53:29Z,family dentist austin,austinfamilydds.com,1,ok,seeded,,1
+2026-07-09T15:53:29Z,family dentist austin,austinfamilydds.com,1,ok,seeded,,1
+2026-07-10T15:53:29Z,family dentist austin,austinfamilydds.com,1,ok,seeded,,1
+2026-07-11T15:53:29Z,family dentist austin,austinfamilydds.com,1,ok,seeded,,1
+2026-07-12T15:53:29Z,family dentist austin,austinfamilydds.com,2,ok,seeded,,1
+2026-07-13T15:53:29Z,family dentist austin,austinfamilydds.com,,failed,seeded,,3
+2026-07-14T15:53:29Z,family dentist austin,austinfamilydds.com,2,ok,seeded,,1
+2026-07-15T15:53:29Z,family dentist austin,austinfamilydds.com,2,ok,seeded,,2
+2026-07-16T15:53:29Z,family dentist austin,austinfamilydds.com,2,ok,seeded,,1
+2026-07-17T15:53:29Z,family dentist austin,austinfamilydds.com,2,ok,seeded,,1
+2026-07-18T15:53:36Z,family dentist austin,austinfamilydds.com,2,ok,live,https://austinfamilydds.com/,1
+2026-07-18T15:57:53Z,family dentist austin,austinfamilydds.com,2,ok,live,https://austinfamilydds.com/,1
+2026-07-04T15:53:29Z,family dentist austin,atxfamilydental.com,5,ok,seeded,,1
+2026-07-05T15:53:29Z,family dentist austin,atxfamilydental.com,4,ok,seeded,,1
+2026-07-06T15:53:29Z,family dentist austin,atxfamilydental.com,3,ok,seeded,,1
+2026-07-07T15:53:29Z,family dentist austin,atxfamilydental.com,3,ok,seeded,,1
+2026-07-08T15:53:29Z,family dentist austin,atxfamilydental.com,2,ok,seeded,,1
+2026-07-09T15:53:29Z,family dentist austin,atxfamilydental.com,3,ok,seeded,,1
+2026-07-10T15:53:29Z,family dentist austin,atxfamilydental.com,2,ok,seeded,,1
+2026-07-11T15:53:29Z,family dentist austin,atxfamilydental.com,2,ok,seeded,,1
+2026-07-12T15:53:29Z,family dentist austin,atxfamilydental.com,2,ok,seeded,,1
+2026-07-13T15:53:29Z,family dentist austin,atxfamilydental.com,,failed,seeded,,3
+2026-07-14T15:53:29Z,family dentist austin,atxfamilydental.com,3,ok,seeded,,1
+2026-07-15T15:53:29Z,family dentist austin,atxfamilydental.com,3,ok,seeded,,2
+2026-07-16T15:53:29Z,family dentist austin,atxfamilydental.com,3,ok,seeded,,1
+2026-07-17T15:53:29Z,family dentist austin,atxfamilydental.com,4,ok,seeded,,1
+2026-07-18T15:53:36Z,family dentist austin,atxfamilydental.com,4,ok,live,https://www.atxfamilydental.com/,1
+2026-07-18T15:57:53Z,family dentist austin,atxfamilydental.com,4,ok,live,https://www.atxfamilydental.com/,1
+2026-07-04T15:53:29Z,coffee shop brooklyn,thatcoffeeshopbk.com,5,ok,seeded,,1
+2026-07-05T15:53:29Z,coffee shop brooklyn,thatcoffeeshopbk.com,5,ok,seeded,,1
+2026-07-06T15:53:29Z,coffee shop brooklyn,thatcoffeeshopbk.com,4,ok,seeded,,1
+2026-07-07T15:53:29Z,coffee shop brooklyn,thatcoffeeshopbk.com,3,ok,seeded,,1
+2026-07-08T15:53:29Z,coffee shop brooklyn,thatcoffeeshopbk.com,3,ok,seeded,,1
+2026-07-09T15:53:29Z,coffee shop brooklyn,thatcoffeeshopbk.com,3,ok,seeded,,1
+2026-07-10T15:53:29Z,coffee shop brooklyn,thatcoffeeshopbk.com,3,ok,seeded,,1
+2026-07-11T15:53:29Z,coffee shop brooklyn,thatcoffeeshopbk.com,3,ok,seeded,,1
+2026-07-12T15:53:29Z,coffee shop brooklyn,thatcoffeeshopbk.com,3,ok,seeded,,1
+2026-07-13T15:53:29Z,coffee shop brooklyn,thatcoffeeshopbk.com,,failed,seeded,,3
+2026-07-14T15:53:29Z,coffee shop brooklyn,thatcoffeeshopbk.com,3,ok,seeded,,1
+2026-07-15T15:53:29Z,coffee shop brooklyn,thatcoffeeshopbk.com,4,ok,seeded,,2
+2026-07-16T15:53:29Z,coffee shop brooklyn,thatcoffeeshopbk.com,4,ok,seeded,,1
+2026-07-17T15:53:29Z,coffee shop brooklyn,thatcoffeeshopbk.com,4,ok,seeded,,1
+2026-07-18T15:53:42Z,coffee shop brooklyn,thatcoffeeshopbk.com,4,ok,live,https://thatcoffeeshopbk.com/,1
+2026-07-18T15:57:53Z,coffee shop brooklyn,thatcoffeeshopbk.com,4,ok,live,https://thatcoffeeshopbk.com/,1
+2026-07-04T15:53:29Z,coffee shop brooklyn,yelp.com,3,ok,seeded,,1
+2026-07-05T15:53:29Z,coffee shop brooklyn,yelp.com,3,ok,seeded,,1
+2026-07-06T15:53:29Z,coffee shop brooklyn,yelp.com,3,ok,seeded,,1
+2026-07-07T15:53:29Z,coffee shop brooklyn,yelp.com,3,ok,seeded,,1
+2026-07-08T15:53:29Z,coffee shop brooklyn,yelp.com,4,ok,seeded,,1
+2026-07-09T15:53:29Z,coffee shop brooklyn,yelp.com,4,ok,seeded,,1
+2026-07-10T15:53:29Z,coffee shop brooklyn,yelp.com,4,ok,seeded,,1
+2026-07-11T15:53:29Z,coffee shop brooklyn,yelp.com,4,ok,seeded,,1
+2026-07-12T15:53:29Z,coffee shop brooklyn,yelp.com,4,ok,seeded,,1
+2026-07-13T15:53:29Z,coffee shop brooklyn,yelp.com,,failed,seeded,,3
+2026-07-14T15:53:29Z,coffee shop brooklyn,yelp.com,6,ok,seeded,,1
+2026-07-15T15:53:29Z,coffee shop brooklyn,yelp.com,6,ok,seeded,,2
+2026-07-16T15:53:29Z,coffee shop brooklyn,yelp.com,7,ok,seeded,,1
+2026-07-17T15:53:29Z,coffee shop brooklyn,yelp.com,6,ok,seeded,,1
+2026-07-18T15:53:42Z,coffee shop brooklyn,yelp.com,6,ok,live,https://www.yelp.com/search?find_desc=Coffee+Shop&find_loc=Brooklyn%2C+NY,1
+2026-07-18T15:57:53Z,coffee shop brooklyn,yelp.com,6,ok,live,https://www.yelp.com/search?find_desc=Coffee+Shop&find_loc=Brooklyn%2C+NY,1
+2026-07-04T15:53:29Z,personal injury lawyer phoenix,ramoslaw.com,5,ok,seeded,,1
+2026-07-05T15:53:29Z,personal injury lawyer phoenix,ramoslaw.com,4,ok,seeded,,1
+2026-07-06T15:53:29Z,personal injury lawyer phoenix,ramoslaw.com,4,ok,seeded,,1
+2026-07-07T15:53:29Z,personal injury lawyer phoenix,ramoslaw.com,4,ok,seeded,,1
+2026-07-08T15:53:29Z,personal injury lawyer phoenix,ramoslaw.com,4,ok,seeded,,1
+2026-07-09T15:53:29Z,personal injury lawyer phoenix,ramoslaw.com,4,ok,seeded,,1
+2026-07-10T15:53:29Z,personal injury lawyer phoenix,ramoslaw.com,4,ok,seeded,,1
+2026-07-11T15:53:29Z,personal injury lawyer phoenix,ramoslaw.com,4,ok,seeded,,1
+2026-07-12T15:53:29Z,personal injury lawyer phoenix,ramoslaw.com,4,ok,seeded,,1
+2026-07-13T15:53:29Z,personal injury lawyer phoenix,ramoslaw.com,,failed,seeded,,3
+2026-07-14T15:53:29Z,personal injury lawyer phoenix,ramoslaw.com,4,ok,seeded,,1
+2026-07-15T15:53:29Z,personal injury lawyer phoenix,ramoslaw.com,4,ok,seeded,,2
+2026-07-16T15:53:29Z,personal injury lawyer phoenix,ramoslaw.com,3,ok,seeded,,1
+2026-07-17T15:53:29Z,personal injury lawyer phoenix,ramoslaw.com,3,ok,seeded,,1
+2026-07-18T15:53:44Z,personal injury lawyer phoenix,ramoslaw.com,3,ok,live,https://www.ramoslaw.com/phoenix-arizona/,1
+2026-07-18T15:57:53Z,personal injury lawyer phoenix,ramoslaw.com,3,ok,live,https://www.ramoslaw.com/phoenix-arizona/,1
+2026-07-04T15:53:29Z,personal injury lawyer phoenix,phillipslaw.com,5,ok,seeded,,1
+2026-07-05T15:53:29Z,personal injury lawyer phoenix,phillipslaw.com,5,ok,seeded,,1
+2026-07-06T15:53:29Z,personal injury lawyer phoenix,phillipslaw.com,4,ok,seeded,,1
+2026-07-07T15:53:29Z,personal injury lawyer phoenix,phillipslaw.com,4,ok,seeded,,1
+2026-07-08T15:53:29Z,personal injury lawyer phoenix,phillipslaw.com,4,ok,seeded,,1
+2026-07-09T15:53:29Z,personal injury lawyer phoenix,phillipslaw.com,4,ok,seeded,,1
+2026-07-10T15:53:29Z,personal injury lawyer phoenix,phillipslaw.com,4,ok,seeded,,1
+2026-07-11T15:53:29Z,personal injury lawyer phoenix,phillipslaw.com,3,ok,seeded,,1
+2026-07-12T15:53:29Z,personal injury lawyer phoenix,phillipslaw.com,4,ok,seeded,,1
+2026-07-13T15:53:29Z,personal injury lawyer phoenix,phillipslaw.com,,failed,seeded,,3
+2026-07-14T15:53:29Z,personal injury lawyer phoenix,phillipslaw.com,5,ok,seeded,,1
+2026-07-15T15:53:29Z,personal injury lawyer phoenix,phillipslaw.com,6,ok,seeded,,2
+2026-07-16T15:53:29Z,personal injury lawyer phoenix,phillipslaw.com,6,ok,seeded,,1
+2026-07-17T15:53:29Z,personal injury lawyer phoenix,phillipslaw.com,6,ok,seeded,,1
+2026-07-18T15:53:44Z,personal injury lawyer phoenix,phillipslaw.com,6,ok,live,https://phillipslaw.com/,1
+2026-07-18T15:57:53Z,personal injury lawyer phoenix,phillipslaw.com,6,ok,live,https://phillipslaw.com/,1
