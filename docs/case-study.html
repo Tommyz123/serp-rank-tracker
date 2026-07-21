@@ -76,6 +76,22 @@
   footer .note{margin-top:22px;font-size:.82rem;opacity:.75;max-width:60ch;margin-left:auto;margin-right:auto}
 
   .disclaimer{font-size:.85rem;color:var(--dim);font-style:italic;margin-top:14px}
+
+  /* FIGURE / BROWSER FRAME */
+  figure{margin:26px 0 6px}
+  .browser{border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);background:var(--card)}
+  .browser .bar{display:flex;align-items:center;gap:7px;padding:10px 13px;background:#0c1220;border-bottom:1px solid var(--line)}
+  .browser .dot{width:11px;height:11px;border-radius:50%;background:#2b3650}
+  .browser .url{margin-left:10px;background:#0f1420;border:1px solid var(--line);border-radius:6px;padding:3px 12px;font-size:.76rem;color:var(--dim);flex:1;max-width:360px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .browser img{display:block;width:100%;height:auto}
+  figcaption{margin-top:12px;font-size:.88rem;color:var(--dim);text-align:center}
+  figcaption b{color:var(--tx)}
+
+  /* ROLE CARD */
+  .rolecard{background:#121a2b;border-left:4px solid var(--seed);border-radius:10px;padding:20px 24px;margin-top:14px}
+  .rolecard dl{display:grid;grid-template-columns:auto 1fr;gap:8px 18px}
+  .rolecard dt{font-weight:700;color:var(--seed);white-space:nowrap}
+  .rolecard dd{color:var(--tx)}
 </style>
 </head>
 <body>
@@ -101,8 +117,25 @@
   </div>
 </div>
 
-<!-- WHAT IT DOES -->
+<!-- MY ROLE -->
 <section>
+  <div class="wrap">
+    <p class="kicker">My Role</p>
+    <h2>Solo build — and the judgment calls were the work.</h2>
+    <p>On a data pipeline, the value isn't lines of code — it's <strong>deciding where honesty has to be enforced instead of hoped for</strong>. That's where the design time went:</p>
+    <div class="rolecard">
+      <dl>
+        <dt>Data model</dt><dd>Made failures and synthetic history <em>first-class, constrained rows</em> — so integrity is enforced by the schema, not by discipline</dd>
+        <dt>Pipeline</dt><dd>Daily collect → parse-with-evidence → archive raw response → rebuild static page → publish, all self-running on cron</dd>
+        <dt>Verifiability</dt><dd>Every stored number carries a paper trail to its raw API response, surfaced in the UI as a per-row verification drawer</dd>
+        <dt>Judgment</dt><dd>Kept it to the Python stdlib + a static page — chose <em>auditable and low-maintenance</em> over feature-count, and scoped the demo to what a visitor can verify in 30 seconds</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT IT DOES -->
+<section class="alt">
   <div class="wrap">
     <p class="kicker">What It Does</p>
     <h2>Daily Google rankings, collected with evidence.</h2>
@@ -111,12 +144,19 @@
       <li><strong>Publishes a static dashboard</strong> — data-integrity panel, trend sparklines, per-row verification drawer, CSV export.</li>
       <li><strong>Runs itself</strong> — a daily cron job collects, rebuilds the page, and publishes; after setup it's a low-maintenance pipeline.</li>
     </ul>
+    <figure>
+      <div class="browser">
+        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">tommyz123.github.io/serp-rank-tracker/</span></div>
+        <img src="img/dashboard.png" alt="The live dashboard: a data-integrity panel showing runs succeeded/failed, and a table of tracked keyword rankings with trend sparklines and per-row verification.">
+      </div>
+      <figcaption>The live dashboard — <b>integrity panel on top</b> (72/76 runs succeeded, 4 failed and <b>kept, never faked</b>), then each tracked ranking with a trend sparkline and a click-to-verify drawer.</figcaption>
+    </figure>
     <p class="disclaimer">Portfolio demo running on real data: live daily collection via SerpAPI started 2026-07-18, so the live history grows every day. Keywords are public sample queries on public domains — no client data, no private analytics.</p>
   </div>
 </section>
 
 <!-- THE PROBLEM -->
-<section class="alt">
+<section>
   <div class="wrap">
     <p class="kicker">The Problem It Solves</p>
     <h2>"Are these numbers real?"</h2>
@@ -126,7 +166,7 @@
 </section>
 
 <!-- BUSINESS VALUE -->
-<section>
+<section class="alt">
   <div class="wrap">
     <p class="kicker">What This Means For A Client</p>
     <h2>Trustworthy reporting, hosted for free.</h2>
@@ -141,7 +181,7 @@
 </section>
 
 <!-- HOW INTEGRITY IS ENFORCED -->
-<section class="alt">
+<section>
   <div class="wrap">
     <p class="kicker">The Hard Part</p>
     <h2>Integrity enforced in the schema — not a hopeful sentence in a README.</h2>
@@ -158,7 +198,7 @@
 </section>
 
 <!-- KEPT SMALL -->
-<section>
+<section class="alt">
   <div class="wrap">
     <p class="kicker">Kept Deliberately Small — On Purpose</p>
     <h2>Judgment calls, not feature-count.</h2>
@@ -171,7 +211,7 @@
 </section>
 
 <!-- VERIFIED BEFORE SHIPPING -->
-<section class="alt">
+<section>
   <div class="wrap">
     <p class="kicker">Verified Before Shipping</p>
     <h2>A five-point checklist, run before the demo went live.</h2>
@@ -187,7 +227,7 @@
 </section>
 
 <!-- EXTENSIONS -->
-<section>
+<section class="alt">
   <div class="wrap">
     <p class="kicker">Natural Extensions For Client Work</p>
     <h2>Straightforward additions on the same schema.</h2>
@@ -204,7 +244,7 @@
       <a class="btn btn-primary" href="./index.html">▶ View the live dashboard</a>
       <a class="btn btn-ghost" href="https://github.com/Tommyz123/serp-rank-tracker" target="_blank" rel="noopener">Source on GitHub →</a>
     </div>
-    <p class="note">Built by someone with hands-on regulated-retail and product-operations experience — the same eye for "is this number real?" applied to data pipelines.</p>
+    <p class="note">Built by someone who treats "is this number real?" as the first question, not the last — data pipelines where the integrity is auditable, not asserted.</p>
   </div>
 </footer>
 
