@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SERP Rank Tracker — Auditable Daily Google Ranking Reports | Case Study</title>
+<meta name="description" content="A Google rank tracker that records failures instead of inventing rankings — every live-collected number on the dashboard can be audited down to the raw API response it came from.">
+<style>
+  :root{
+    --bg:#0f1420; --card:#171e2e; --card-alt:#131a2a; --line:#232d42;
+    --tx:#dbe2ef; --dim:#8593ad; --ink:#ffffff;
+    --ok:#3fb68b; --bad:#e05d5d; --seed:#5b8def; --accent:#5b8def;
+    --radius:12px; --shadow:0 12px 34px rgba(0,0,0,.35); --shadow-sm:0 3px 12px rgba(0,0,0,.25);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--tx); background:var(--bg); line-height:1.65; font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:860px;margin:0 auto;padding:0 22px}
+  h1,h2,h3{color:var(--ink);line-height:1.28;letter-spacing:-.01em}
+  h2{font-size:1.55rem;margin-bottom:.4rem}
+  h3{font-size:1.08rem;margin-bottom:.3rem}
+  p{margin-bottom:1rem}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  strong{color:var(--ink)}
+  em{color:var(--tx);font-style:italic}
+  code{background:#0c1626;color:var(--seed);padding:.12em .45em;border-radius:5px;font-size:.86em;font-family:"SF Mono",Menlo,Consolas,monospace;border:1px solid var(--line)}
+
+  /* HERO */
+  .hero{background:linear-gradient(160deg,#1b2440 0%,#0f1420 100%);padding:72px 0 60px;position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+  .hero::after{content:"";position:absolute;top:-70px;right:-70px;width:280px;height:280px;background:var(--seed);opacity:.10;border-radius:50%}
+  .hero .wrap{position:relative;z-index:1}
+  .eyebrow{display:inline-block;background:rgba(91,141,239,.16);color:var(--seed);font-weight:700;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;padding:6px 14px;border-radius:999px;margin-bottom:18px}
+  .hero h1{color:#fff;font-size:2.35rem;margin-bottom:18px;max-width:22ch}
+  .hero .lede{font-size:1.18rem;color:#c6d0e6;max-width:62ch;margin-bottom:28px}
+  .cta-row{display:flex;gap:13px;flex-wrap:wrap;margin-top:8px}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:.96rem;padding:12px 22px;border-radius:999px;transition:transform .12s ease,box-shadow .12s ease}
+  .btn-primary{background:var(--seed);color:#fff}
+  .btn-primary:hover{text-decoration:none;transform:translateY(-2px);box-shadow:0 8px 22px rgba(91,141,239,.4)}
+  .btn-ghost{background:rgba(255,255,255,.06);color:#fff;border:1px solid rgba(255,255,255,.18)}
+  .btn-ghost:hover{text-decoration:none;background:rgba(255,255,255,.12)}
+
+  /* META STRIP */
+  .meta-strip{background:#0c1220;border-bottom:1px solid var(--line)}
+  .meta-strip .wrap{display:flex;flex-wrap:wrap;gap:26px;padding:16px 22px;font-size:.85rem;color:var(--dim)}
+  .meta-strip b{color:#fff;display:block;font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:2px;opacity:.8}
+
+  section{padding:52px 0;border-bottom:1px solid var(--line)}
+  section.alt{background:#121829}
+  .kicker{color:var(--seed);font-weight:700;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
+
+  ul.clean{list-style:none;margin-top:8px}
+  ul.clean li{padding-left:26px;position:relative;margin-bottom:11px}
+  ul.clean li::before{content:"✓";position:absolute;left:0;color:var(--ok);font-weight:800}
+
+  ul.arrow{list-style:none;margin-top:8px}
+  ul.arrow li{padding-left:22px;position:relative;margin-bottom:10px}
+  ul.arrow li::before{content:"›";position:absolute;left:6px;color:var(--seed);font-weight:700}
+
+  ol.checklist{list-style:none;counter-reset:step;margin-top:8px}
+  ol.checklist li{padding-left:40px;position:relative;margin-bottom:14px}
+  ol.checklist li::before{counter-increment:step;content:counter(step);position:absolute;left:0;top:0;width:26px;height:26px;background:rgba(91,141,239,.15);color:var(--seed);border:1px solid var(--seed);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.82rem;font-weight:700}
+
+  .callout{background:#121a2b;border-radius:var(--radius);padding:22px 24px;margin-top:8px;border:1px solid var(--line);border-left:4px solid var(--seed)}
+  .callout p:last-child{margin-bottom:0}
+
+  .stack{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .stack span{background:#0c1626;border:1px solid var(--line);color:var(--tx);font-size:.82rem;padding:6px 12px;border-radius:8px}
+
+  footer{background:#0c1220;padding:44px 0;text-align:center;color:var(--dim)}
+  footer .cta-row{justify-content:center}
+  footer .note{margin-top:22px;font-size:.82rem;opacity:.75;max-width:60ch;margin-left:auto;margin-right:auto}
+
+  .disclaimer{font-size:.85rem;color:var(--dim);font-style:italic;margin-top:14px}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Data Pipeline · Case Study</span>
+    <h1>A rank tracker that records failures instead of inventing rankings.</h1>
+    <p class="lede">Every live-collected number on the dashboard can be audited down to the raw API response it came from — data integrity enforced by the schema and the pipeline, not by good intentions.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="./index.html">▶ View the live dashboard</a>
+      <a class="btn btn-ghost" href="https://github.com/Tommyz123/serp-rank-tracker" target="_blank" rel="noopener">Source on GitHub →</a>
+    </div>
+  </div>
+</header>
+
+<div class="meta-strip">
+  <div class="wrap">
+    <div><b>Role</b>Solo build — design, pipeline, integrity model &amp; dashboard</div>
+    <div><b>Domain</b>SEO reporting · verifiable data</div>
+    <div><b>Stack</b>Python (stdlib) · SQLite · SerpAPI · GitHub Pages · cron</div>
+    <div><b>Type</b>Portfolio project on real, live-collected data</div>
+  </div>
+</div>
+
+<!-- WHAT IT DOES -->
+<section>
+  <div class="wrap">
+    <p class="kicker">What It Does</p>
+    <h2>Daily Google rankings, collected with evidence.</h2>
+    <ul class="arrow">
+      <li><strong>Collects daily</strong> — queries Google (via SerpAPI) for each configured keyword, matches tracked domains against the organic results, and stores positions <em>with evidence</em> (matched URL, title, snippet) in SQLite.</li>
+      <li><strong>Publishes a static dashboard</strong> — data-integrity panel, trend sparklines, per-row verification drawer, CSV export.</li>
+      <li><strong>Runs itself</strong> — a daily cron job collects, rebuilds the page, and publishes; after setup it's a low-maintenance pipeline.</li>
+    </ul>
+    <p class="disclaimer">Portfolio demo running on real data: live daily collection via SerpAPI started 2026-07-18, so the live history grows every day. Keywords are public sample queries on public domains — no client data, no private analytics.</p>
+  </div>
+</section>
+
+<!-- THE PROBLEM -->
+<section class="alt">
+  <div class="wrap">
+    <p class="kicker">The Problem It Solves</p>
+    <h2>"Are these numbers real?"</h2>
+    <p>Rank trackers tend to fail quietly: a fetch times out and the chart still shows a smooth line; demo data blends silently with measured data; "top-100 tracking" claims outrun what the parser actually saw.</p>
+    <p>For anyone buying SEO reporting, the core question is <strong>"are these numbers real?"</strong> This project makes the honest answer <em>structural</em> — enforced by the schema and the pipeline, not by good intentions.</p>
+  </div>
+</section>
+
+<!-- BUSINESS VALUE -->
+<section>
+  <div class="wrap">
+    <p class="kicker">What This Means For A Client</p>
+    <h2>Trustworthy reporting, hosted for free.</h2>
+    <ul class="clean">
+      <li><strong>Replaces manual rank checking</strong> with a scheduled pipeline — no one has to remember to look.</li>
+      <li><strong>A failed data pull is never mistaken for a ranking drop.</strong> Failures are stored and shown as gaps, not smoothed into the trend line — so you don't panic (or celebrate) over an artifact.</li>
+      <li><strong>Every reported position carries an audit trail</strong> back to the archived raw response — agencies can show clients <em>why</em> a number is trustworthy, not just assert it.</li>
+      <li><strong>Reports export cleanly</strong> (CSV with full provenance columns) and the dashboard hosts free as a static page.</li>
+      <li><strong>Easily customized</strong> — keywords, locations, tracked domains, competitors, alerting — on top of the same small schema.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- HOW INTEGRITY IS ENFORCED -->
+<section class="alt">
+  <div class="wrap">
+    <p class="kicker">The Hard Part</p>
+    <h2>Integrity enforced in the schema — not a hopeful sentence in a README.</h2>
+    <p>The differentiator isn't the dashboard; it's that honesty is <strong>structural</strong>. Four design decisions make it so:</p>
+    <div class="callout">
+      <ul class="arrow">
+        <li><strong>Failures are first-class rows.</strong> A fetch gets 3 labeled retry attempts; if all fail, the run is stored as <code>failed</code> with its error message and attempt count, and a failed check is written for every tracked domain. Gaps render as gaps — nothing is interpolated or carried forward.</li>
+        <li><strong>Every live number has a paper trail.</strong> Each successful run archives the raw API response to disk and stores its path plus the public SERP URL beside the parsed result. The UI exposes this as a per-row verification drawer.</li>
+        <li><strong>Synthetic history is a separate data layer by construction.</strong> The demo's two-week back-history carries <code>layer='seeded'</code>, enforced by a SQLite <code>CHECK</code> constraint, rendered with distinct hollow markers and a badge, and flagged in the CSV. Live and seeded rows are never blended — and the seeded history deliberately includes a failed run, so the demo shows its own failure handling.</li>
+        <li><strong>Depth is recorded, not asserted.</strong> Each run stores <code>result_depth</code> — how many organic results were actually parsed — for auditing. The demo tracks and labels Google page 1.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- KEPT SMALL -->
+<section>
+  <div class="wrap">
+    <p class="kicker">Kept Deliberately Small — On Purpose</p>
+    <h2>Judgment calls, not feature-count.</h2>
+    <ul class="clean">
+      <li><strong>Static dashboard</strong>: free hosting, instant loads, and visitors never burn API quota.</li>
+      <li><strong>Python standard library only</strong>: nothing to break, trivial to hand off, runs anywhere Python runs.</li>
+      <li><strong>Quota-aware</strong>: one API search covers <em>all</em> domains tracked under a keyword, so cost scales with keywords × runs, not with how many domains you watch.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- VERIFIED BEFORE SHIPPING -->
+<section class="alt">
+  <div class="wrap">
+    <p class="kicker">Verified Before Shipping</p>
+    <h2>A five-point checklist, run before the demo went live.</h2>
+    <ol class="checklist">
+      <li><strong>Storage ↔ archive audit</strong> — stored positions cross-checked row-by-row against the archived raw API responses.</li>
+      <li><strong>Export completeness</strong> — CSV verified to contain every check row, including failed and seeded ones, with the layer column intact.</li>
+      <li><strong>Layer purity</strong> — confirmed seeded rows cannot leak into live aggregates, end-to-end.</li>
+      <li><strong>Browser test</strong> — zero JS console errors; every verification drawer and export control functional.</li>
+      <li><strong>Failure-path test</strong> — collector run against bad input to confirm a real failure is <em>recorded as a failure</em>, not papered over.</li>
+    </ol>
+    <p style="margin-top:18px">The design was also pressure-tested against likely buyer objections before build — which is why the integrity panel sits at the top of the page and the scope stays inside what a visitor can verify in 30 seconds.</p>
+  </div>
+</section>
+
+<!-- EXTENSIONS -->
+<section>
+  <div class="wrap">
+    <p class="kicker">Natural Extensions For Client Work</p>
+    <h2>Straightforward additions on the same schema.</h2>
+    <p>Alert emails on rank drops · competitor columns · multi-location tracking · deeper pagination · scheduled PDF/email reports — each a contained addition on the same runs/checks schema.</p>
+    <div class="stack">
+      <span>Python 3.10+ (stdlib only)</span><span>SQLite</span><span>SerpAPI</span><span>GitHub Pages</span><span>cron</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="cta-row">
+      <a class="btn btn-primary" href="./index.html">▶ View the live dashboard</a>
+      <a class="btn btn-ghost" href="https://github.com/Tommyz123/serp-rank-tracker" target="_blank" rel="noopener">Source on GitHub →</a>
+    </div>
+    <p class="note">Built by someone with hands-on regulated-retail and product-operations experience — the same eye for "is this number real?" applied to data pipelines.</p>
+  </div>
+</footer>
+
+</body>
+</html>
