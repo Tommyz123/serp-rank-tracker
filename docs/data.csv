@@ -96,6 +96,7 @@ timestamp_utc,keyword,domain,position,status,data_layer,matched_url,fetch_attemp
 2026-10-04T19:10:03Z,emergency plumber denver,blueskyplumbing.com,,not_found,live,,1
 2026-10-05T19:10:03Z,emergency plumber denver,blueskyplumbing.com,,not_found,live,,1
 2026-10-06T19:10:03Z,emergency plumber denver,blueskyplumbing.com,,not_found,live,,1
+2026-10-07T19:10:03Z,emergency plumber denver,blueskyplumbing.com,,not_found,live,,1
 2026-07-04T15:53:29Z,emergency plumber denver,rotorooter.com,5,ok,seeded,,1
 2026-07-05T15:53:29Z,emergency plumber denver,rotorooter.com,4,ok,seeded,,1
 2026-07-06T15:53:29Z,emergency plumber denver,rotorooter.com,4,ok,seeded,,1
@@ -193,6 +194,7 @@ timestamp_utc,keyword,domain,position,status,data_layer,matched_url,fetch_attemp
 2026-10-04T19:10:03Z,emergency plumber denver,rotorooter.com,,not_found,live,,1
 2026-10-05T19:10:03Z,emergency plumber denver,rotorooter.com,,not_found,live,,1
 2026-10-06T19:10:03Z,emergency plumber denver,rotorooter.com,,not_found,live,,1
+2026-10-07T19:10:03Z,emergency plumber denver,rotorooter.com,,not_found,live,,1
 2026-07-04T15:53:29Z,family dentist austin,austinfamilydds.com,1,ok,seeded,,1
 2026-07-05T15:53:29Z,family dentist austin,austinfamilydds.com,1,ok,seeded,,1
 2026-07-06T15:53:29Z,family dentist austin,austinfamilydds.com,1,ok,seeded,,1
@@ -290,6 +292,7 @@ timestamp_utc,keyword,domain,position,status,data_layer,matched_url,fetch_attemp
 2026-10-04T19:10:04Z,family dentist austin,austinfamilydds.com,8,ok,live,https://austinfamilydds.com/meet-the-dentists/,1
 2026-10-05T19:10:05Z,family dentist austin,austinfamilydds.com,6,ok,live,https://austinfamilydds.com/meet-the-dentists/,1
 2026-10-06T19:10:05Z,family dentist austin,austinfamilydds.com,5,ok,live,https://austinfamilydds.com/meet-the-dentists/,1
+2026-10-07T19:10:05Z,family dentist austin,austinfamilydds.com,,not_found,live,,1
 2026-07-04T15:53:29Z,family dentist austin,atxfamilydental.com,5,ok,seeded,,1
 2026-07-05T15:53:29Z,family dentist austin,atxfamilydental.com,4,ok,seeded,,1
 2026-07-06T15:53:29Z,family dentist austin,atxfamilydental.com,3,ok,seeded,,1
@@ -387,6 +390,7 @@ timestamp_utc,keyword,domain,position,status,data_layer,matched_url,fetch_attemp
 2026-10-04T19:10:04Z,family dentist austin,atxfamilydental.com,,not_found,live,,1
 2026-10-05T19:10:05Z,family dentist austin,atxfamilydental.com,,not_found,live,,1
 2026-10-06T19:10:05Z,family dentist austin,atxfamilydental.com,,not_found,live,,1
+2026-10-07T19:10:05Z,family dentist austin,atxfamilydental.com,,not_found,live,,1
 2026-07-04T15:53:29Z,coffee shop brooklyn,thatcoffeeshopbk.com,5,ok,seeded,,1
 2026-07-05T15:53:29Z,coffee shop brooklyn,thatcoffeeshopbk.com,5,ok,seeded,,1
 2026-07-06T15:53:29Z,coffee shop brooklyn,thatcoffeeshopbk.com,4,ok,seeded,,1
@@ -484,6 +488,7 @@ timestamp_utc,keyword,domain,position,status,data_layer,matched_url,fetch_attemp
 2026-10-04T19:10:05Z,coffee shop brooklyn,thatcoffeeshopbk.com,,not_found,live,,1
 2026-10-05T19:10:06Z,coffee shop brooklyn,thatcoffeeshopbk.com,,not_found,live,,1
 2026-10-06T19:10:44Z,coffee shop brooklyn,thatcoffeeshopbk.com,,not_found,live,,1
+2026-10-07T19:10:06Z,coffee shop brooklyn,thatcoffeeshopbk.com,,not_found,live,,1
 2026-07-04T15:53:29Z,coffee shop brooklyn,yelp.com,3,ok,seeded,,1
 2026-07-05T15:53:29Z,coffee shop brooklyn,yelp.com,3,ok,seeded,,1
 2026-07-06T15:53:29Z,coffee shop brooklyn,yelp.com,3,ok,seeded,,1
@@ -581,6 +586,7 @@ timestamp_utc,keyword,domain,position,status,data_layer,matched_url,fetch_attemp
 2026-10-04T19:10:05Z,coffee shop brooklyn,yelp.com,,not_found,live,,1
 2026-10-05T19:10:06Z,coffee shop brooklyn,yelp.com,,not_found,live,,1
 2026-10-06T19:10:44Z,coffee shop brooklyn,yelp.com,,not_found,live,,1
+2026-10-07T19:10:06Z,coffee shop brooklyn,yelp.com,6,ok,live,https://www.yelp.com/search?find_desc=Coffee+Shop&find_loc=New+York%2C+NY,1
 2026-07-04T15:53:29Z,personal injury lawyer phoenix,ramoslaw.com,5,ok,seeded,,1
 2026-07-05T15:53:29Z,personal injury lawyer phoenix,ramoslaw.com,4,ok,seeded,,1
 2026-07-06T15:53:29Z,personal injury lawyer phoenix,ramoslaw.com,4,ok,seeded,,1
@@ -678,6 +684,7 @@ timestamp_utc,keyword,domain,position,status,data_layer,matched_url,fetch_attemp
 2026-10-04T19:10:06Z,personal injury lawyer phoenix,ramoslaw.com,,not_found,live,,1
 2026-10-05T19:10:07Z,personal injury lawyer phoenix,ramoslaw.com,,not_found,live,,1
 2026-10-06T19:10:48Z,personal injury lawyer phoenix,ramoslaw.com,,not_found,live,,1
+2026-10-07T19:10:53Z,personal injury lawyer phoenix,ramoslaw.com,,not_found,live,,1
 2026-07-04T15:53:29Z,personal injury lawyer phoenix,phillipslaw.com,5,ok,seeded,,1
 2026-07-05T15:53:29Z,personal injury lawyer phoenix,phillipslaw.com,5,ok,seeded,,1
 2026-07-06T15:53:29Z,personal injury lawyer phoenix,phillipslaw.com,4,ok,seeded,,1
@@ -775,3 +782,4 @@ timestamp_utc,keyword,domain,position,status,data_layer,matched_url,fetch_attemp
 2026-10-04T19:10:06Z,personal injury lawyer phoenix,phillipslaw.com,,not_found,live,,1
 2026-10-05T19:10:07Z,personal injury lawyer phoenix,phillipslaw.com,,not_found,live,,1
 2026-10-06T19:10:48Z,personal injury lawyer phoenix,phillipslaw.com,,not_found,live,,1
+2026-10-07T19:10:53Z,personal injury lawyer phoenix,phillipslaw.com,9,ok,live,https://phillipslaw.com/,1
