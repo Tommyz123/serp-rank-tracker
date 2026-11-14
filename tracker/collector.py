@@ -63,13 +63,61 @@ def public_serp_url(keyword, cfg):
     return "https://www.google.com/search?" + q
 
 
+REDIRECT_HOSTS = ("google.com", "www.google.com")
+
+
+def result_host(item):
+    """Host of the site an organic result points to.
+
+    Normally this is the host of `link`. Some SerpAPI responses carry a Google
+    redirect in `link` (https://www.google.com/goto?url=...) instead of the
+    site's own URL. Then the site is read from `displayed_link`
+    ("https://example.com > path"), which is the address Google shows under
+    the title. If neither gives a host, the result is not matched to anything.
+    """
+    host = urllib.parse.urlparse(item.get("link") or "").netloc.lower()
+    if host and host not in REDIRECT_HOSTS:
+        return host
+    shown = (item.get("displayed_link") or "").split(" ")[0].strip()
+    if not shown:
+        return ""
+    if "://" not in shown:
+        shown = "https://" + shown
+    return urllib.parse.urlparse(shown).netloc.lower()
+
+
+def result_url(item):
+    """URL to store for a matched result: its own link, or, when `link` is a
+    Google redirect, the site address read from `displayed_link`."""
+    link = item.get("link") or ""
+    host = urllib.parse.urlparse(link).netloc.lower()
+    if host and host not in REDIRECT_HOSTS:
+        return link
+    shown = result_host(item)
+    return "https://" + shown if shown else link
+
+
 def match_domain(organic, domain):
-    """First organic result whose link belongs to `domain` (or a subdomain)."""
+    """First organic result that belongs to `domain` (or a subdomain)."""
+    domain = domain.lower()
     for item in organic:
-        host = urllib.parse.urlparse(item.get("link", "")).netloc.lower()
+        host = result_host(item)
         if host == domain or host.endswith("." + domain):
             return item
     return None
+
+
+def parse_check(organic, domain):
+    """The values stored in `checks` for one tracked domain, from one response.
+    Used by the collector and by tracker.reparse, so both read a response the
+    same way."""
+    hit = match_domain(organic, domain)
+    if not hit:
+        return {"status": "not_found", "position": None, "matched_url": None,
+                "title": None, "snippet": None}
+    return {"status": "ok", "position": hit.get("position"),
+            "matched_url": result_url(hit), "title": hit.get("title"),
+            "snippet": (hit.get("snippet") or "")[:300]}
 
 
 def archive_raw(keyword, ts, data):
@@ -119,18 +167,13 @@ def collect(conn, cfg, api_key):
             " raw_path, result_depth) VALUES (?, ?, 'success', ?, ?, ?, ?)",
             (ts, keyword, attempts, serp_url, raw_path, len(organic))).lastrowid
         for d in domains:
-            hit = match_domain(organic, d)
-            if hit:
-                conn.execute(
-                    "INSERT INTO checks (run_id, ts_utc, keyword, domain, position,"
-                    " matched_url, title, snippet, status)"
-                    " VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'ok')",
-                    (run_id, ts, keyword, d, hit.get("position"), hit.get("link"),
-                     hit.get("title"), (hit.get("snippet") or "")[:300]))
-            else:
-                conn.execute(
-                    "INSERT INTO checks (run_id, ts_utc, keyword, domain, status)"
-                    " VALUES (?, ?, ?, ?, 'not_found')", (run_id, ts, keyword, d))
+            c = parse_check(organic, d)
+            conn.execute(
+                "INSERT INTO checks (run_id, ts_utc, keyword, domain, position,"
+                " matched_url, title, snippet, status)"
+                " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                (run_id, ts, keyword, d, c["position"], c["matched_url"],
+                 c["title"], c["snippet"], c["status"]))
         conn.commit()
         print(f"[collector] '{keyword}' ok (attempt {attempts}), "
               f"{len(organic)} organic results")

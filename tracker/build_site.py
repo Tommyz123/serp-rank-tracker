@@ -15,6 +15,7 @@ import sys
 from datetime import datetime, timedelta
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from tracker.collector import load_config
 from tracker.db import connect
 
 # docs/ (not site/) because GitHub Pages serves from /root or /docs only
@@ -60,20 +61,27 @@ def fetch_payload(conn):
             "serp_url": run["serp_url"], "attempts": run["attempts"],
             "error": run["error"], "raw_path": run["raw_path"],
         })
-    return {"integrity": integrity, "pairs": list(pairs.values())}
+    # The dashboard shows the pairs that are in config.json now. Pairs that
+    # were tracked earlier and then removed stay in the database and in the
+    # CSV export (their history is not deleted), marked tracked=False.
+    current = {(e["keyword"], d) for e in load_config()["keywords"] for d in e["domains"]}
+    for p in pairs.values():
+        p["tracked"] = (p["keyword"], p["domain"]) in current
+    ordered = sorted(pairs.values(), key=lambda p: not p["tracked"])
+    return {"integrity": integrity, "pairs": ordered}
 
 
 def write_csv(payload, path):
     with open(path, "w", newline="") as f:
         w = csv.writer(f)
         w.writerow(["timestamp_utc", "keyword", "domain", "position", "status",
-                    "data_layer", "matched_url", "fetch_attempts"])
+                    "data_layer", "matched_url", "fetch_attempts", "currently_tracked"])
         for p in payload["pairs"]:
             for h in p["history"]:
                 w.writerow([h["ts"], p["keyword"], p["domain"],
                             h["position"] if h["position"] is not None else "",
                             h["status"], h["layer"], h["matched_url"] or "",
-                            h["attempts"]])
+                            h["attempts"], "yes" if p["tracked"] else "no"])
 
 
 TEMPLATE = """<!DOCTYPE html>
@@ -105,7 +113,9 @@ TEMPLATE = """<!DOCTYPE html>
   th {{ text-align:left; font-size:12px; text-transform:uppercase; letter-spacing:1px; color:var(--dim); padding:8px 10px; border-bottom:1px solid var(--line); }}
   td {{ padding:11px 10px; border-bottom:1px solid var(--line); vertical-align:middle; }}
   tr.row {{ cursor:pointer; }} tr.row:hover td {{ background:#1b2438; }}
-  .pos {{ font-size:21px; font-weight:700; width:54px; }}
+  .pos {{ font-size:21px; font-weight:700; width:120px; }}
+  .pos-none {{ color:var(--dim); }}
+  .pos-last {{ font-size:11px; font-weight:400; color:var(--dim); white-space:nowrap; }}
   .delta-up {{ color:var(--ok); }} .delta-down {{ color:var(--bad); }} .delta-flat {{ color:var(--dim); }}
   .kw {{ font-weight:600; }} .dom {{ color:var(--dim); font-size:13px; }}
   .chip {{ font-size:11px; padding:2px 9px; border-radius:20px; border:1px solid var(--line); color:var(--dim); white-space:nowrap; }}
@@ -145,6 +155,7 @@ TEMPLATE = """<!DOCTYPE html>
       <thead><tr><th>Pos</th><th>Δ</th><th>Keyword / domain</th><th>Trend (old → new)</th><th>Last checked (UTC)</th><th>Status</th></tr></thead>
       <tbody id="rows"></tbody>
     </table>
+    <p class="foot" style="margin-top:12px">Pos shows the latest check only: "—" means the site was not on page 1 in that check (the last position found is shown below it). Sites tracked since 2026-11-14 have earlier history that was re-read from the archived responses; see the README.</p>
     <p style="margin-top:16px"><a class="btn" href="data.csv" download>Download CSV (full history, layer-labeled)</a></p>
   </div>
 
@@ -195,15 +206,23 @@ function spark(hist) {{
 function esc(s) {{ return (s||'').replace(/[&<>"]/g, c => ({{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}})[c]); }}
 
 const tbody = document.getElementById('rows');
-DATA.pairs.forEach((p, idx) => {{
+DATA.pairs.filter(p => p.tracked).forEach((p, idx) => {{
   const hist = p.history;
   const okHist = hist.filter(h => h.position != null);
-  const cur = okHist.length ? okHist[okHist.length-1] : null;
-  const prev = okHist.length > 1 ? okHist[okHist.length-2] : null;
-  const last = hist[hist.length-1];
+  const cur = okHist.length ? okHist[okHist.length-1] : null;   // last check that found the site
+  const last = hist[hist.length-1];                             // latest check, whatever its result
+  const onPage = last.status==='ok';
+  // Pos shows the latest check only. If the site was not found (or the fetch
+  // failed) in the latest check, Pos is "—" and the last found position is
+  // shown small, with its date, so an old position never looks current.
+  let posCell = '<span class="pos-none">—</span>';
+  if (onPage) posCell = '#' + last.position;
+  else if (cur) posCell += `<div class="pos-last">last #${{cur.position}} · ${{cur.ts.slice(0,10)}}</div>`;
+  // Δ compares the latest check with the check before it, only when both found the site.
+  const before = hist.length > 1 ? hist[hist.length-2] : null;
   let delta = '<span class="delta-flat">—</span>';
-  if (cur && prev) {{
-    const d = prev.position - cur.position;
+  if (onPage && before && before.position != null) {{
+    const d = before.position - last.position;
     delta = d>0 ? `<span class="delta-up">▲ ${{d}}</span>` : d<0 ? `<span class="delta-down">▼ ${{-d}}</span>` : '<span class="delta-flat">＝</span>';
   }}
   const chipCls = last.status==='ok' ? 'ok' : last.status==='failed' ? 'failed' : '';
@@ -211,14 +230,15 @@ DATA.pairs.forEach((p, idx) => {{
                 : last.status==='failed' ? 'FAILED (kept)' : 'not on page 1';
   const tr = document.createElement('tr');
   tr.className = 'row';
-  tr.innerHTML = `<td class="pos">${{cur?('#'+cur.position):'—'}}</td><td>${{delta}}</td>
+  tr.innerHTML = `<td class="pos">${{posCell}}</td><td>${{delta}}</td>
     <td><div class="kw">${{esc(p.keyword)}}</div><div class="dom">${{esc(p.domain)}}</div></td>
     <td>${{spark(hist)}}</td><td class="dom">${{fmt(last.ts)}}</td>
     <td><span class="chip ${{chipCls}}">${{chipTxt}}</span></td>`;
   const drawer = document.createElement('tr');
   drawer.className = 'drawer'; drawer.style.display = 'none';
-  const v = cur || last;
+  const v = onPage ? last : (cur || last);
   drawer.innerHTML = `<td colspan="6"><dl>
+    <dt>Details from</dt><dd>${{onPage ? 'the latest check' : (cur ? 'the last check that found this site ('+fmt(cur.ts)+'); the latest check did not find it' : 'the latest check (this site has not been found yet)')}}</dd>
     <dt>Data layer</dt><dd>${{v.layer==='live'?'<span class="badge-live">live collected</span>':'<span class="badge-seed">seeded demo history</span>'}}</dd>
     <dt>Matched URL</dt><dd>${{v.matched_url?`<a href="${{esc(v.matched_url)}}" rel="nofollow">${{esc(v.matched_url)}}</a>`:'—'}}</dd>
     <dt>Result snippet</dt><dd>${{esc(v.snippet)||'—'}}</dd>
@@ -241,12 +261,13 @@ def main():
     os.makedirs(SITE_DIR, exist_ok=True)
     write_csv(payload, os.path.join(SITE_DIR, "data.csv"))
     out = TEMPLATE.format(
-        payload_json=json.dumps(payload),
+        # "</" is escaped so text from a search result cannot close the script tag
+        payload_json=json.dumps(payload).replace("</", "<\\/"),
         repo_url="https://github.com/Tommyz123/serp-rank-tracker",
     )
     with open(os.path.join(SITE_DIR, "index.html"), "w") as f:
         f.write(out)
-    n_pairs = len(payload["pairs"])
+    n_pairs = sum(1 for p in payload["pairs"] if p["tracked"])
     print(f"[build_site] wrote docs/index.html ({n_pairs} tracked pairs) + docs/data.csv")
 
 

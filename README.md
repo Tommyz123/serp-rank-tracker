@@ -48,7 +48,7 @@ No third-party Python dependencies — standard library only (Python 3.10+).
   "gl": "us",
   "hl": "en",
   "keywords": [
-    { "keyword": "emergency plumber denver", "domains": ["blueskyplumbing.com", "rotorooter.com"] }
+    { "keyword": "emergency plumber denver", "domains": ["teamdavelogan.com", "rotorooter.com"] }
   ]
 }
 ```
@@ -70,6 +70,47 @@ Schedule both with cron (daily is plenty for rank tracking):
 ```cron
 10 11 * * *  cd /path/to/serp-rank-tracker && export $(grep -v '^#' .env | xargs) && python3 -m tracker.collector && python3 -m tracker.build_site
 ```
+
+## Re-reading archived responses
+
+`tracker/reparse.py` rebuilds result rows from the responses saved in
+`data/raw/`, with no new API calls:
+
+```bash
+python3 -m tracker.reparse          # show what would change
+python3 -m tracker.reparse --write  # apply
+python3 -m unittest discover tests  # tests for matching and re-reading
+```
+
+It was used twice on 2026-11-14:
+
+- **A matching bug.** Some SerpAPI responses put a Google redirect in `link`
+  (`/goto?url=...`) instead of the site's own URL. The collector matched sites
+  by `link` only, so on those results a site that was on the page was stored as
+  "not found". 14 rows between 2026-09-08 and 2026-11-14 were wrong (13 "not
+  found" that were on the page, 1 position that was #1 and stored as #2). The
+  collector now reads the site from `displayed_link` when `link` is a redirect,
+  and those rows were corrected from the same archived responses.
+- **Changed demo sites.** Two of the demo sites (ramoslaw.com, phillipslaw.com)
+  had not appeared on page 1 for weeks, and others appeared only on some days.
+  Five sites were replaced in `config.json` with sites that appeared on page 1
+  more often in the archived results. Their history was read from the responses
+  already archived on each day, so it is real data for those days, not seeded.
+  Note that these sites were chosen after looking at that history. The removed
+  sites stay in the database and in the CSV export (`currently_tracked = no`).
+
+Known limit: when `link` is a redirect and `displayed_link` is not an address
+(social results show "610+ followers"), the site cannot be identified and is
+not matched.
+
+## How to read the dashboard
+
+- **Pos** is the result of the latest check only. If the latest check did not
+  find the site, Pos shows "—" and, in small text, the last position that was
+  found and its date.
+- **Δ** compares the latest check with the check before it, when both found the site.
+- Results vary from day to day: the searches are sent without a fixed location,
+  and Google does not return the same page every time.
 
 `tracker/seed_demo.py` (optional) generates the labeled 14-day demo backfill —
 useful for previewing the UI, safe to skip in real deployments.
