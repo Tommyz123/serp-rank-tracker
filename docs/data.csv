@@ -136,6 +136,7 @@ timestamp_utc,keyword,domain,position,status,data_layer,matched_url,fetch_attemp
 2026-11-13T20:10:01Z,emergency plumber denver,rotorooter.com,,failed,live,,3,yes
 2026-11-14T20:10:01Z,emergency plumber denver,rotorooter.com,,not_found,live,,1,yes
 2026-11-14T22:55:40Z,emergency plumber denver,rotorooter.com,,not_found,live,,1,yes
+2026-11-15T20:10:01Z,emergency plumber denver,rotorooter.com,,not_found,live,,1,yes
 2026-07-04T15:53:29Z,family dentist austin,austinfamilydds.com,1,ok,seeded,,1,yes
 2026-07-05T15:53:29Z,family dentist austin,austinfamilydds.com,1,ok,seeded,,1,yes
 2026-07-06T15:53:29Z,family dentist austin,austinfamilydds.com,1,ok,seeded,,1,yes
@@ -273,6 +274,7 @@ timestamp_utc,keyword,domain,position,status,data_layer,matched_url,fetch_attemp
 2026-11-13T20:10:41Z,family dentist austin,austinfamilydds.com,,not_found,live,,2,yes
 2026-11-14T20:10:04Z,family dentist austin,austinfamilydds.com,,not_found,live,,1,yes
 2026-11-14T22:55:42Z,family dentist austin,austinfamilydds.com,,not_found,live,,1,yes
+2026-11-15T20:10:04Z,family dentist austin,austinfamilydds.com,,not_found,live,,1,yes
 2026-07-04T15:53:29Z,coffee shop brooklyn,thatcoffeeshopbk.com,5,ok,seeded,,1,yes
 2026-07-05T15:53:29Z,coffee shop brooklyn,thatcoffeeshopbk.com,5,ok,seeded,,1,yes
 2026-07-06T15:53:29Z,coffee shop brooklyn,thatcoffeeshopbk.com,4,ok,seeded,,1,yes
@@ -410,6 +412,7 @@ timestamp_utc,keyword,domain,position,status,data_layer,matched_url,fetch_attemp
 2026-11-13T20:11:02Z,coffee shop brooklyn,thatcoffeeshopbk.com,,not_found,live,,1,yes
 2026-11-14T20:10:05Z,coffee shop brooklyn,thatcoffeeshopbk.com,,not_found,live,,1,yes
 2026-11-14T22:55:42Z,coffee shop brooklyn,thatcoffeeshopbk.com,,not_found,live,,1,yes
+2026-11-15T20:10:13Z,coffee shop brooklyn,thatcoffeeshopbk.com,,not_found,live,,1,yes
 2026-07-18T15:53:29Z,emergency plumber denver,teamdavelogan.com,7,ok,live,https://teamdavelogan.com/company-categories/24-hour-emergency-service-plumbing-contractor-denver-co/,1,yes
 2026-07-18T15:57:53Z,emergency plumber denver,teamdavelogan.com,7,ok,live,https://teamdavelogan.com/company-categories/24-hour-emergency-service-plumbing-contractor-denver-co/,1,yes
 2026-07-18T19:10:02Z,emergency plumber denver,teamdavelogan.com,7,ok,live,https://teamdavelogan.com/company-categories/24-hour-emergency-service-plumbing-contractor-denver-co/,1,yes
@@ -533,6 +536,7 @@ timestamp_utc,keyword,domain,position,status,data_layer,matched_url,fetch_attemp
 2026-11-13T20:10:01Z,emergency plumber denver,teamdavelogan.com,,failed,live,,3,yes
 2026-11-14T20:10:01Z,emergency plumber denver,teamdavelogan.com,,not_found,live,,1,yes
 2026-11-14T22:55:40Z,emergency plumber denver,teamdavelogan.com,,not_found,live,,1,yes
+2026-11-15T20:10:01Z,emergency plumber denver,teamdavelogan.com,,not_found,live,,1,yes
 2026-07-18T15:53:36Z,family dentist austin,forestfamily.com,1,ok,live,https://www.forestfamily.com/,1,yes
 2026-07-18T15:57:53Z,family dentist austin,forestfamily.com,1,ok,live,https://www.forestfamily.com/,1,yes
 2026-07-18T19:10:05Z,family dentist austin,forestfamily.com,1,ok,live,https://www.forestfamily.com/,1,yes
@@ -656,6 +660,7 @@ timestamp_utc,keyword,domain,position,status,data_layer,matched_url,fetch_attemp
 2026-11-13T20:10:41Z,family dentist austin,forestfamily.com,,not_found,live,,2,yes
 2026-11-14T20:10:04Z,family dentist austin,forestfamily.com,,not_found,live,,1,yes
 2026-11-14T22:55:42Z,family dentist austin,forestfamily.com,,not_found,live,,1,yes
+2026-11-15T20:10:04Z,family dentist austin,forestfamily.com,,not_found,live,,1,yes
 2026-07-18T15:53:42Z,coffee shop brooklyn,sprudge.com,8,ok,live,https://sprudge.com/the-sprudge-guide-to-coffee-in-south-brooklyn-271310.html,1,yes
 2026-07-18T15:57:53Z,coffee shop brooklyn,sprudge.com,8,ok,live,https://sprudge.com/the-sprudge-guide-to-coffee-in-south-brooklyn-271310.html,1,yes
 2026-07-18T19:10:09Z,coffee shop brooklyn,sprudge.com,8,ok,live,https://sprudge.com/the-sprudge-guide-to-coffee-in-south-brooklyn-271310.html,1,yes
@@ -779,6 +784,7 @@ timestamp_utc,keyword,domain,position,status,data_layer,matched_url,fetch_attemp
 2026-11-13T20:11:02Z,coffee shop brooklyn,sprudge.com,,not_found,live,,1,yes
 2026-11-14T20:10:05Z,coffee shop brooklyn,sprudge.com,,not_found,live,,1,yes
 2026-11-14T22:55:42Z,coffee shop brooklyn,sprudge.com,,not_found,live,,1,yes
+2026-11-15T20:10:13Z,coffee shop brooklyn,sprudge.com,,not_found,live,,1,yes
 2026-07-18T15:53:44Z,personal injury lawyer phoenix,warforyou.com,,not_found,live,,1,yes
 2026-07-18T15:57:53Z,personal injury lawyer phoenix,warforyou.com,,not_found,live,,1,yes
 2026-07-18T19:10:13Z,personal injury lawyer phoenix,warforyou.com,,not_found,live,,1,yes
@@ -902,6 +908,7 @@ timestamp_utc,keyword,domain,position,status,data_layer,matched_url,fetch_attemp
 2026-11-13T20:11:03Z,personal injury lawyer phoenix,warforyou.com,,not_found,live,,1,yes
 2026-11-14T20:10:06Z,personal injury lawyer phoenix,warforyou.com,,not_found,live,,1,yes
 2026-11-14T22:55:49Z,personal injury lawyer phoenix,warforyou.com,,not_found,live,,1,yes
+2026-11-15T20:10:15Z,personal injury lawyer phoenix,warforyou.com,,not_found,live,,1,yes
 2026-07-18T15:53:44Z,personal injury lawyer phoenix,husbandandwifelawteam.com,,not_found,live,,1,yes
 2026-07-18T15:57:53Z,personal injury lawyer phoenix,husbandandwifelawteam.com,,not_found,live,,1,yes
 2026-07-18T19:10:13Z,personal injury lawyer phoenix,husbandandwifelawteam.com,,not_found,live,,1,yes
@@ -1025,6 +1032,7 @@ timestamp_utc,keyword,domain,position,status,data_layer,matched_url,fetch_attemp
 2026-11-13T20:11:03Z,personal injury lawyer phoenix,husbandandwifelawteam.com,,not_found,live,,1,yes
 2026-11-14T20:10:06Z,personal injury lawyer phoenix,husbandandwifelawteam.com,,not_found,live,,1,yes
 2026-11-14T22:55:49Z,personal injury lawyer phoenix,husbandandwifelawteam.com,,not_found,live,,1,yes
+2026-11-15T20:10:15Z,personal injury lawyer phoenix,husbandandwifelawteam.com,,not_found,live,,1,yes
 2026-07-04T15:53:29Z,emergency plumber denver,blueskyplumbing.com,1,ok,seeded,,1,no
 2026-07-05T15:53:29Z,emergency plumber denver,blueskyplumbing.com,1,ok,seeded,,1,no
 2026-07-06T15:53:29Z,emergency plumber denver,blueskyplumbing.com,1,ok,seeded,,1,no
