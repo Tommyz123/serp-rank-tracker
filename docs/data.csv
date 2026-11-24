@@ -145,6 +145,7 @@ timestamp_utc,keyword,domain,position,status,data_layer,matched_url,fetch_attemp
 2026-11-21T20:10:01Z,emergency plumber denver,rotorooter.com,,not_found,live,,1,yes
 2026-11-22T20:10:01Z,emergency plumber denver,rotorooter.com,1,ok,live,https://www.rotorooter.com/denver/,1,yes
 2026-11-23T20:10:01Z,emergency plumber denver,rotorooter.com,1,ok,live,https://www.rotorooter.com/denver/,1,yes
+2026-11-24T20:10:02Z,emergency plumber denver,rotorooter.com,1,ok,live,https://www.rotorooter.com/denver/,1,yes
 2026-07-04T15:53:29Z,family dentist austin,austinfamilydds.com,1,ok,seeded,,1,yes
 2026-07-05T15:53:29Z,family dentist austin,austinfamilydds.com,1,ok,seeded,,1,yes
 2026-07-06T15:53:29Z,family dentist austin,austinfamilydds.com,1,ok,seeded,,1,yes
@@ -291,6 +292,7 @@ timestamp_utc,keyword,domain,position,status,data_layer,matched_url,fetch_attemp
 2026-11-21T20:10:03Z,family dentist austin,austinfamilydds.com,,not_found,live,,1,yes
 2026-11-22T20:10:03Z,family dentist austin,austinfamilydds.com,6,ok,live,https://austinfamilydds.com,1,yes
 2026-11-23T20:10:02Z,family dentist austin,austinfamilydds.com,,not_found,live,,1,yes
+2026-11-24T20:10:03Z,family dentist austin,austinfamilydds.com,5,ok,live,https://austinfamilydds.com/,1,yes
 2026-07-04T15:53:29Z,coffee shop brooklyn,thatcoffeeshopbk.com,5,ok,seeded,,1,yes
 2026-07-05T15:53:29Z,coffee shop brooklyn,thatcoffeeshopbk.com,5,ok,seeded,,1,yes
 2026-07-06T15:53:29Z,coffee shop brooklyn,thatcoffeeshopbk.com,4,ok,seeded,,1,yes
@@ -437,6 +439,7 @@ timestamp_utc,keyword,domain,position,status,data_layer,matched_url,fetch_attemp
 2026-11-21T20:10:05Z,coffee shop brooklyn,thatcoffeeshopbk.com,6,ok,live,https://thatcoffeeshopbk.com,1,yes
 2026-11-22T20:10:06Z,coffee shop brooklyn,thatcoffeeshopbk.com,3,ok,live,https://thatcoffeeshopbk.com,1,yes
 2026-11-23T20:10:08Z,coffee shop brooklyn,thatcoffeeshopbk.com,4,ok,live,https://thatcoffeeshopbk.com/,1,yes
+2026-11-24T20:10:04Z,coffee shop brooklyn,thatcoffeeshopbk.com,4,ok,live,https://thatcoffeeshopbk.com/,1,yes
 2026-07-18T15:53:29Z,emergency plumber denver,teamdavelogan.com,7,ok,live,https://teamdavelogan.com/company-categories/24-hour-emergency-service-plumbing-contractor-denver-co/,1,yes
 2026-07-18T15:57:53Z,emergency plumber denver,teamdavelogan.com,7,ok,live,https://teamdavelogan.com/company-categories/24-hour-emergency-service-plumbing-contractor-denver-co/,1,yes
 2026-07-18T19:10:02Z,emergency plumber denver,teamdavelogan.com,7,ok,live,https://teamdavelogan.com/company-categories/24-hour-emergency-service-plumbing-contractor-denver-co/,1,yes
@@ -569,6 +572,7 @@ timestamp_utc,keyword,domain,position,status,data_layer,matched_url,fetch_attemp
 2026-11-21T20:10:01Z,emergency plumber denver,teamdavelogan.com,,not_found,live,,1,yes
 2026-11-22T20:10:01Z,emergency plumber denver,teamdavelogan.com,4,ok,live,https://teamdavelogan.com,1,yes
 2026-11-23T20:10:01Z,emergency plumber denver,teamdavelogan.com,4,ok,live,https://teamdavelogan.com/company-categories/24-hour-emergency-service-plumbing-contractor-denver-co/,1,yes
+2026-11-24T20:10:02Z,emergency plumber denver,teamdavelogan.com,4,ok,live,https://teamdavelogan.com/company-categories/24-hour-emergency-service-plumbing-contractor-denver-co/,1,yes
 2026-07-18T15:53:36Z,family dentist austin,forestfamily.com,1,ok,live,https://www.forestfamily.com/,1,yes
 2026-07-18T15:57:53Z,family dentist austin,forestfamily.com,1,ok,live,https://www.forestfamily.com/,1,yes
 2026-07-18T19:10:05Z,family dentist austin,forestfamily.com,1,ok,live,https://www.forestfamily.com/,1,yes
@@ -701,6 +705,7 @@ timestamp_utc,keyword,domain,position,status,data_layer,matched_url,fetch_attemp
 2026-11-21T20:10:03Z,family dentist austin,forestfamily.com,,not_found,live,,1,yes
 2026-11-22T20:10:03Z,family dentist austin,forestfamily.com,1,ok,live,https://www.forestfamily.com/,1,yes
 2026-11-23T20:10:02Z,family dentist austin,forestfamily.com,,not_found,live,,1,yes
+2026-11-24T20:10:03Z,family dentist austin,forestfamily.com,1,ok,live,https://www.forestfamily.com/,1,yes
 2026-07-18T15:53:42Z,coffee shop brooklyn,sprudge.com,8,ok,live,https://sprudge.com/the-sprudge-guide-to-coffee-in-south-brooklyn-271310.html,1,yes
 2026-07-18T15:57:53Z,coffee shop brooklyn,sprudge.com,8,ok,live,https://sprudge.com/the-sprudge-guide-to-coffee-in-south-brooklyn-271310.html,1,yes
 2026-07-18T19:10:09Z,coffee shop brooklyn,sprudge.com,8,ok,live,https://sprudge.com/the-sprudge-guide-to-coffee-in-south-brooklyn-271310.html,1,yes
@@ -833,6 +838,7 @@ timestamp_utc,keyword,domain,position,status,data_layer,matched_url,fetch_attemp
 2026-11-21T20:10:05Z,coffee shop brooklyn,sprudge.com,,not_found,live,,1,yes
 2026-11-22T20:10:06Z,coffee shop brooklyn,sprudge.com,8,ok,live,https://sprudge.com,1,yes
 2026-11-23T20:10:08Z,coffee shop brooklyn,sprudge.com,8,ok,live,https://sprudge.com/the-sprudge-guide-to-coffee-in-south-brooklyn-271310.html,1,yes
+2026-11-24T20:10:04Z,coffee shop brooklyn,sprudge.com,9,ok,live,https://sprudge.com/the-sprudge-guide-to-coffee-in-south-brooklyn-271310.html,1,yes
 2026-07-18T15:53:44Z,personal injury lawyer phoenix,warforyou.com,,not_found,live,,1,yes
 2026-07-18T15:57:53Z,personal injury lawyer phoenix,warforyou.com,,not_found,live,,1,yes
 2026-07-18T19:10:13Z,personal injury lawyer phoenix,warforyou.com,,not_found,live,,1,yes
@@ -965,6 +971,7 @@ timestamp_utc,keyword,domain,position,status,data_layer,matched_url,fetch_attemp
 2026-11-21T20:10:08Z,personal injury lawyer phoenix,warforyou.com,,not_found,live,,1,yes
 2026-11-22T20:10:08Z,personal injury lawyer phoenix,warforyou.com,,not_found,live,,1,yes
 2026-11-23T20:10:10Z,personal injury lawyer phoenix,warforyou.com,,not_found,live,,1,yes
+2026-11-24T20:10:05Z,personal injury lawyer phoenix,warforyou.com,,not_found,live,,1,yes
 2026-07-18T15:53:44Z,personal injury lawyer phoenix,husbandandwifelawteam.com,,not_found,live,,1,yes
 2026-07-18T15:57:53Z,personal injury lawyer phoenix,husbandandwifelawteam.com,,not_found,live,,1,yes
 2026-07-18T19:10:13Z,personal injury lawyer phoenix,husbandandwifelawteam.com,,not_found,live,,1,yes
@@ -1097,6 +1104,7 @@ timestamp_utc,keyword,domain,position,status,data_layer,matched_url,fetch_attemp
 2026-11-21T20:10:08Z,personal injury lawyer phoenix,husbandandwifelawteam.com,,not_found,live,,1,yes
 2026-11-22T20:10:08Z,personal injury lawyer phoenix,husbandandwifelawteam.com,,not_found,live,,1,yes
 2026-11-23T20:10:10Z,personal injury lawyer phoenix,husbandandwifelawteam.com,,not_found,live,,1,yes
+2026-11-24T20:10:05Z,personal injury lawyer phoenix,husbandandwifelawteam.com,5,ok,live,https://husbandandwifelawteam.com/office-locations/arizona/central-phoenix,1,yes
 2026-07-04T15:53:29Z,emergency plumber denver,blueskyplumbing.com,1,ok,seeded,,1,no
 2026-07-05T15:53:29Z,emergency plumber denver,blueskyplumbing.com,1,ok,seeded,,1,no
 2026-07-06T15:53:29Z,emergency plumber denver,blueskyplumbing.com,1,ok,seeded,,1,no
